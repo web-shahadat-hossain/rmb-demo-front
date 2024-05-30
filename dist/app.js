@@ -18,16 +18,18 @@ const routers_1 = __importDefault(require("./routers"));
 const globalErrorHandler_1 = __importDefault(require("./middleware/globalErrorHandler"));
 const app = (0, express_1.default)();
 // cors
-// app.use(cors());
-app.use((0, cors_1.default)({
-    origin: [
-        'https://next-js-rmb-management.vercel.app/',
-        'next-js-rmb-management.vercel.app',
-        'https://next-js-rmb-management.vercel.app',
-    ], // Set specific origin
-    credentials: true,
-    optionsSuccessStatus: 200,
-}));
+app.use((0, cors_1.default)());
+// app.use(
+//   cors({
+//     origin: [
+//       'https://next-js-rmb-management.vercel.app/',
+//       'next-js-rmb-management.vercel.app',
+//       'https://next-js-rmb-management.vercel.app',
+//     ], // Set specific origin
+//     credentials: true,
+//     optionsSuccessStatus: 200,
+//   })
+// );
 //data parse
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
