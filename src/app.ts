@@ -5,18 +5,18 @@ import globalErrorHandler from './middleware/globalErrorHandler';
 const app: Application = express();
 
 // cors
-app.use(cors());
-// app.use(
-//   cors({
-//     origin: [
-//       'https://next-js-rmb-management.vercel.app/',
-//       'next-js-rmb-management.vercel.app',
-//       'https://next-js-rmb-management.vercel.app',
-//     ], // Set specific origin
-//     credentials: true,
-//     optionsSuccessStatus: 200,
-//   })
-// );
+// app.use(cors());
+app.use(
+  cors({
+    origin: [
+      'https://rmb-back-demo.vercel.app/',
+      'rmb-back-demo.vercel.app',
+      'https://rmb-back-demo.vercel.app',
+    ], // Set specific origin
+    credentials: true,
+    optionsSuccessStatus: 200,
+  })
+);
 
 //data parse
 app.use(express.json());
